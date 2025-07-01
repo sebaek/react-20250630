@@ -41,6 +41,40 @@ function MyComp5() {
   );
 }
 
+function MyComp6() {
+  return (
+    <div>
+      <h1>제목</h1>
+      <p>Lorem ipsum dolor.</p>
+    </div>
+  );
+}
+
+function MyComp7() {
+  return (
+    <>
+      <h2>두번째 제목</h2>
+      <p>Lorem ipsum dolor.</p>
+    </>
+  );
+}
+
+function MyComp8() {
+  return <h1>hello</h1>;
+}
+function MyComp9() {
+  return (
+    <div>
+      <h1>Lorem.</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam esse,
+        hic quia sunt temporibus unde voluptatibus. Beatae ea eveniet harum
+        minima molestias quo repellat sunt! Eveniet id in vitae? Commodi.
+      </p>
+    </div>
+  );
+}
+
 function App4() {
   return (
     <>
