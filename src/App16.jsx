@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap";
+import { Alert, Button } from "react-bootstrap";
 
 function App16() {
   return (
@@ -14,6 +14,9 @@ function App16() {
       <Button variant="outline-danger" size="lg">
         Lorem.
       </Button>
+      <hr />
+      <Alert variant="danger">위험 경고</Alert>
+      <Alert variant="info">정보 알림</Alert>
     </>
   );
 }
