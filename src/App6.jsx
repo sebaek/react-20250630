@@ -32,6 +32,13 @@ function MyComp5({ city, country, address = "기본 주소" }) {
   return null;
 }
 
+function MyComp6({ score, className, location = "기본 위치" }) {
+  console.log("점수6", score);
+  console.log("분류6", className);
+  console.log("위치6", location);
+  return null;
+}
+
 function App6() {
   return (
     <>
