@@ -1,4 +1,4 @@
-import { Alert, Button } from "react-bootstrap";
+import { Alert, Button, Table } from "react-bootstrap";
 
 function App16() {
   return (
@@ -17,10 +17,72 @@ function App16() {
       <hr />
       <Alert variant="danger">위험 경고</Alert>
       <Alert variant="info">정보 알림</Alert>
+      <Alert variant="warning">정보 알림</Alert>
+      <Alert variant="success">정보 알림</Alert>
       {/*  연습 : Alert 만들어보기*/}
       <hr />
       {/*  연습 : Table component 사용해서 아래와 같은 table 만들어보기  */}
       {/*table.table.table-striped.table-bordered.table-hover>thead>tr>th*3>lorem1^^^tbody>tr*3>td*3>lorem1*/}
+      <Table striped={true} bordered={true} hover={true}>
+        <thead>
+          <tr>
+            <th>Lorem.</th>
+            <th>Modi.</th>
+            <th>Hic?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lorem.</td>
+            <td>Fugit.</td>
+            <td>Iste?</td>
+          </tr>
+          <tr>
+            <td>Lorem.</td>
+            <td>Omnis!</td>
+            <td>Labore!</td>
+          </tr>
+          <tr>
+            <td>Lorem.</td>
+            <td>Nemo!</td>
+            <td>Natus?</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Lorem.</td>
+            <td>Nemo!</td>
+            <td>Ut.</td>
+          </tr>
+          <tr>
+            <td>Lorem.</td>
+            <td>Nam!</td>
+            <td>Iste.</td>
+          </tr>
+          <tr>
+            <td>Lorem.</td>
+            <td>Iste.</td>
+            <td>Officiis?</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>Lorem.</td>
+            <td>Provident.</td>
+            <td>At?</td>
+          </tr>
+          <tr>
+            <td>Lorem.</td>
+            <td>Nulla.</td>
+            <td>Inventore?</td>
+          </tr>
+          <tr>
+            <td>Lorem.</td>
+            <td>Vero.</td>
+            <td>Quisquam.</td>
+          </tr>
+        </tbody>
+      </Table>
       <table className="table table-striped table-bordered table-hover">
         <thead>
           <tr>
