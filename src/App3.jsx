@@ -19,7 +19,26 @@ function MyAwesomeButton() {
 }
 
 // MyNewHeader 컴포넌트 만들기
+function MyNewHeader() {
+  // 함수 코드들...
+  // js 주석
+  /*
+  js 주석
+   */
 
+  return (
+    <h1
+      style={{
+        color: "skyblue",
+        border: "2px solid skyblue",
+      }}
+    >
+      {/* jsx 주석 */}
+      {/* ctrl + / : 단축키 */}
+      내가 작성한 멋진 제목
+    </h1>
+  );
+}
 function App3() {
   return (
     <>
@@ -55,6 +74,8 @@ function App3() {
         너무 잘 만든 버튼
       </button>
       <MyAwesomeButton />
+      <MyAwesomeButton />
+      <MyNewHeader />
       <MyNewHeader />
     </>
   );
