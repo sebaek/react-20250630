@@ -9,7 +9,11 @@ function App16() {
       <Button variant="danger">위험</Button>
       <Button>버튼 </Button>
       <hr />
-      {/*  연습  다양한 variant props 값으로 버튼들 만들어 보기 */}
+      {/*  연습  다양한 variant, size props 값으로 버튼들 만들어 보기 */}
+      <button className="btn btn-outline-danger btn-lg">Lorem.</button>
+      <Button variant="outline-danger" size="lg">
+        Lorem.
+      </Button>
     </>
   );
 }
