@@ -11,6 +11,14 @@ function MyComp1({ name = "son", age = 44, city = "london" }) {
   );
 }
 
+function MyComp2({ name, score }) {
+  return (
+    <p>
+      이름은 {name}이고 점수는 {score} 입니다.
+    </p>
+  );
+}
+
 function App8() {
   return (
     <>
@@ -18,6 +26,10 @@ function App8() {
       <MyComp1 name={"lee"} />
       <MyComp1 name={"kim"} age={55} />
       <MyComp1 name={"park"} age={66} city="busan" />
+      {/* 연습 : <p> 이름은 홍길동이고 점수는 98 입니다. </p> */}
+      <MyComp2 score={98} name="홍길동" />
+      <MyComp2 score={88} name="장길산" />
+      <MyComp2 score={77} name="임꺽정" />
     </>
   );
 }
