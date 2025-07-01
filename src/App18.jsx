@@ -8,6 +8,7 @@ import {
   Spinner,
   Form,
   FloatingLabel,
+  Carousel,
 } from "react-bootstrap";
 import { GrCaretNext, GrCaretPrevious } from "react-icons/gr";
 import { useState } from "react";
@@ -17,6 +18,39 @@ function App18() {
 
   return (
     <div>
+      <Carousel>
+        <Carousel.Item>
+          <img className="d-block w-100" src="/public/bee.jpg" alt="" />
+          <Carousel.Caption>
+            <h3>꿀벌</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam,
+              libero?
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src="/public/bear.jpg" alt="" />
+          <Carousel.Caption>
+            <h3>아기곰</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum,
+              voluptatem?
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img className="d-block w-100" src="/public/eagle.jpg" alt="" />
+          <Carousel.Caption>
+            <h3>독수리</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Eligendi, iure!
+            </p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+      <hr />
       <FloatingLabel label="아이디를 입력해주세요." controlId="idFloatingInput">
         <Form.Control placeholder="아이디를 입력해주세요." />
       </FloatingLabel>
