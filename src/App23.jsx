@@ -44,9 +44,48 @@ function MyComp2() {
   );
 }
 
+function MyComp3() {
+  // const count = arr[0]; // 현재 상태
+  // const setCount = arr[1]; // 상태 업데이트 함수
+  const [count, setCount] = useState(1);
+
+  function handleButtonClick() {
+    setCount(count + 1);
+  }
+
+  return (
+    <div>
+      {count} <br />
+      <button onClick={handleButtonClick}>세번째 버튼</button>
+    </div>
+  );
+}
+
+function MyComp4() {
+  const [message, setMessage] = useState("첫번째 메세지");
+
+  // 연습
+  // 1번 버튼 클릭하면 message가 "첫번째 메세지"
+  // 2번 버튼 클릭하면 message가 "두번째 메세지"
+  // 로 출력되도록 코드 작성
+
+  return (
+    <div>
+      {message}
+      <br />
+      <button>1번</button>
+      <button>2번</button>
+    </div>
+  );
+}
+
 function App23(props) {
   return (
     <div>
+      <MyComp4 />
+      <hr />
+      <MyComp3 />
+      <hr />
       <MyComp2 />
       <hr />
       <MyComp1 />
