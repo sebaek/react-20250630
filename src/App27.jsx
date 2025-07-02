@@ -50,19 +50,17 @@ function MyComp2() {
 
 function MyComp3() {
   const [text, setText] = useState("");
-  const [length, setLength] = useState(0);
 
   // 연습
   // 불필요한 상태 length를 제거하고 같은 일을 하도록 코드 변경
 
   function handleInputChange(e) {
     setText(e.target.value);
-    setLength(e.target.value.length);
   }
   return (
     <div>
       <input type="text" value={text} onChange={handleInputChange} />
-      <p>{length}</p>
+      <p>{text.length}</p>
     </div>
   );
 }
