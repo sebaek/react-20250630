@@ -10,10 +10,15 @@ function App21(props) {
     console.log("버튼 클릭");
   }
 
+  function handleParaClick(e) {
+    e.stopPropagation();
+    console.log("para 클릭");
+  }
+
   return (
     <div className="p-5 bg-info" onClick={() => console.log("div 클릭")}>
       {/* 연습:  p 클릭 이벤트가 div까지 전파되지 않도록 코드 수정*/}
-      <p className="bg-danger" onClick={() => console.log("para 클릭")}>
+      <p className="bg-danger" onClick={handleParaClick}>
         Lorem ipsum dolor.
       </p>
 
