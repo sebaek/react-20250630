@@ -43,12 +43,9 @@ function MyComp2() {
 function MyComp3() {
   const [count, setCount] = useState(0);
 
-  console.log(count); // 현재 상태 출력
-
   let number = count;
   function handleButtonClick() {
-    number++;
-    number++;
+    setCount(number + 2);
   }
 
   return (
