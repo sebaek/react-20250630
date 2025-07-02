@@ -65,9 +65,34 @@ function MyComp3() {
   );
 }
 
+function MyComp4() {
+  const [student, setStudent] = useState({
+    name: "",
+    className: "",
+    score: 0.0,
+  });
+  // 연습
+  // 아래 input요소에 값이 출력되도록 코드 작성
+  return (
+    <div>
+      <div>
+        <input type="text" value={student.name} />
+      </div>
+      <div>
+        <input type="email" value={student.email} />
+      </div>
+      <div>
+        <input type="number" step={0.1} value={student.score} />
+      </div>
+    </div>
+  );
+}
+
 function App30(props) {
   return (
     <div>
+      <MyComp4 />
+      <hr />
       <MyComp3 />
       <hr />
       <MyComp2 />
