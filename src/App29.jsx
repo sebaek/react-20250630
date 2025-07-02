@@ -88,13 +88,31 @@ function MyComp5() {
 
   // 연습
 
+  function handleBearButtonClick() {
+    const nextList = [...list];
+    nextList.push("곰");
+    setList(nextList);
+  }
+
+  function handleEagleButtonClick() {
+    // const nextList = [...list];
+    // nextList.push("독수리");
+    const nextList = [...list, "독수리"];
+    setList(nextList);
+  }
+
+  function handleBeeButtonClick() {
+    setList([...list, "벌"]);
+  }
+
   // 각 버튼 클릭시 새 아이템 추가 되도록 코드 작성
   return (
     <div>
       {/*button*3+ul*/}
-      <button>곰 추가</button>
-      <button>독수리 추가</button>
-      <button>벌 추가</button>
+      <button onClick={handleBearButtonClick}>곰 추가</button>
+      <button onClick={handleEagleButtonClick}>독수리 추가</button>
+      <button onClick={handleBeeButtonClick}>벌 추가</button>
+      <button onClick={() => setList([...list, "사자"])}>사자 추가</button>
       <ul>
         {list.map((item) => (
           <li>{item}</li>
