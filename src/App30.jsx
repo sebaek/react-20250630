@@ -76,13 +76,32 @@ function MyComp4() {
   return (
     <div>
       <div>
-        <input type="text" value={student.name} />
+        <input
+          type="text"
+          value={student.name}
+          onChange={(e) => {
+            const nextStudent = { ...student };
+            nextStudent.name = e.target.value;
+            setStudent(nextStudent);
+          }}
+        />
       </div>
       <div>
-        <input type="email" value={student.email} />
+        <input
+          type="text"
+          value={student.className}
+          onChange={(e) =>
+            setStudent({ ...student, className: e.target.value })
+          }
+        />
       </div>
       <div>
-        <input type="number" step={0.1} value={student.score} />
+        <input
+          type="number"
+          step={0.1}
+          value={student.score}
+          onChange={(e) => setStudent({ ...student, score: e.target.value })}
+        />
       </div>
     </div>
   );
