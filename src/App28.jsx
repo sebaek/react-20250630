@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function MyComp1() {
   // use... : 훅(hook)
-  // react 훅의 사용을 순서로 기억함
+  // react는 훅의 사용을 순서로 기억함
   const [number, setNumber] = useState(0);
   const [text, setText] = useState("");
   const [name, setName] = useState("son");
