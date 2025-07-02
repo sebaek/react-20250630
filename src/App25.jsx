@@ -16,9 +16,23 @@ function MyComp1(props) {
   );
 }
 
+function MyComp2() {
+  // 연습
+  // input 값이 입력되도록
+  // 리셋 버튼 클릭 시 input의 value가 "" 되도록
+  return (
+    <div>
+      <input type="text" value="" />
+      <button>리셋</button>
+    </div>
+  );
+}
+
 function App25(props) {
   return (
     <div>
+      <MyComp2 />
+      <hr />
       <MyComp1 />
     </div>
   );
