@@ -116,9 +116,24 @@ function MyComp6() {
   );
 }
 
+const images = ["/public/bear.jpg", "/public/eagle.jpg", "/public/bee.jpg"];
+
+function MyComp7() {
+  // 연습 : 다음 버튼 클릭시 독수리->벌->곰->독수리 로 출력되도록 코드 완성
+  return (
+    <div>
+      <img className="w-100" src={images[0]} alt="" />
+      <br />
+      <button>다음</button>
+    </div>
+  );
+}
+
 function App23(props) {
   return (
     <div>
+      <MyComp7 />
+      <hr />
       <MyComp6 />
       <hr />
       <MyComp5 />
