@@ -69,12 +69,48 @@ function MyComp4() {
   // 2번 버튼 클릭하면 message가 "두번째 메세지"
   // 로 출력되도록 코드 작성
 
+  function handleButton1Click() {
+    // message = "첫번째 메세지";
+    setMessage("첫번째 메세지");
+  }
+
+  function handleButton2Click() {
+    // message = "두번째 메세지"
+    setMessage("두번째 메세지");
+  }
+
   return (
     <div>
       {message}
       <br />
-      <button>1번</button>
-      <button>2번</button>
+      <button onClick={handleButton1Click}>1번</button>
+      <button onClick={handleButton2Click}>2번</button>
+    </div>
+  );
+}
+
+function MyComp5() {
+  const [color, setColor] = useState("black");
+
+  return (
+    <div>
+      <div style={{ backgroundColor: color, padding: "20px" }}></div>
+      <button onClick={() => setColor("red")}>빨강</button>
+      <button onClick={() => setColor("yellow")}>노랑</button>
+      <button onClick={() => setColor("blue")}>파랑</button>
+    </div>
+  );
+}
+
+function MyComp6() {
+  // 연습 : 각 버튼 클릭시 해당 이미지로 출력되도록 코드 완성
+  return (
+    <div>
+      <img className="w-100" src="/public/bear.jpg" alt="" />
+      <br />
+      <button>곰</button>
+      <button>독수리</button>
+      <button>벌</button>
     </div>
   );
 }
@@ -82,6 +118,10 @@ function MyComp4() {
 function App23(props) {
   return (
     <div>
+      <MyComp6 />
+      <hr />
+      <MyComp5 />
+      <hr />
       <MyComp4 />
       <hr />
       <MyComp3 />
