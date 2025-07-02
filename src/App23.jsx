@@ -119,12 +119,43 @@ function MyComp6() {
 const images = ["/public/bear.jpg", "/public/eagle.jpg", "/public/bee.jpg"];
 
 function MyComp7() {
+  const [index, setIndex] = useState(0);
+
+  function handleNextButtonClick() {
+    // index를 하나씩 옮기기 (바꾸기)
+    let nextIndex = index + 1;
+    if (nextIndex >= images.length) {
+      nextIndex = 0;
+    }
+    setIndex(nextIndex);
+  }
+
+  function handlePrevButtonClick() {
+    let nextIndex = index - 1;
+    if (nextIndex < 0) {
+      nextIndex = images.length - 1;
+    }
+    setIndex(nextIndex);
+  }
+
+  function handlePrevButtonClick2() {
+    setIndex((index - 1 + images.length) % images.length);
+  }
+
+  function handleNextButtonClick2() {
+    setIndex((index + 1) % images.length);
+  }
+
   // 연습 : 다음 버튼 클릭시 독수리->벌->곰->독수리 로 출력되도록 코드 완성
   return (
     <div>
-      <img className="w-100" src={images[0]} alt="" />
+      <img className="w-100" src={images[index]} alt="" />
       <br />
-      <button>다음</button>
+      <button onClick={handlePrevButtonClick2}>이전</button>
+      <button onClick={handleNextButtonClick2}>다음</button>
+      <hr />
+      <button onClick={handlePrevButtonClick}>이전</button>
+      <button onClick={handleNextButtonClick}>다음</button>
     </div>
   );
 }
