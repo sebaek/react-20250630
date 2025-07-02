@@ -104,13 +104,14 @@ function MyComp5() {
 
 function MyComp6() {
   // 연습 : 각 버튼 클릭시 해당 이미지로 출력되도록 코드 완성
+  const [imagePath, setImagePath] = useState("/public/bear.jpg");
   return (
     <div>
-      <img className="w-100" src="/public/bear.jpg" alt="" />
+      <img className="w-100" src={imagePath} alt="" />
       <br />
-      <button>곰</button>
-      <button>독수리</button>
-      <button>벌</button>
+      <button onClick={() => setImagePath("/public/bear.jpg")}>곰</button>
+      <button onClick={() => setImagePath("/public/eagle.jpg")}>독수리</button>
+      <button onClick={() => setImagePath("/public/bee.jpg")}>벌</button>
     </div>
   );
 }
