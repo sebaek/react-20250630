@@ -17,13 +17,19 @@ function MyComp1(props) {
 }
 
 function MyComp2() {
+  const [message, setMessage] = useState("");
   // 연습
   // input 값이 입력되도록
   // 리셋 버튼 클릭 시 input의 value가 "" 되도록
+
   return (
     <div>
-      <input type="text" value="" />
-      <button>리셋</button>
+      <input
+        type="text"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      <button onClick={() => setMessage("")}>리셋</button>
     </div>
   );
 }
