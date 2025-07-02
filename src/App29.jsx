@@ -25,6 +25,11 @@ function MyComp2() {
             <li>0</li>
           </ul>
   */}
+      <ul>
+        {datas.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
