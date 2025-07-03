@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 
 function MyComp1() {
+  const [checked, setChecked] = useState(false);
+
+  console.log(checked);
   return (
     <div>
-      <Form.Check type="switch" />
+      <Form.Check
+        type="switch"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+      />
     </div>
   );
 }
