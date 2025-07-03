@@ -33,33 +33,54 @@ function MyComp1() {
   );
 }
 
-function MyInput() {
+function MyInput({ person, onNameChange, onAddressChange }) {
   return (
     <div>
       <div>
-        <input type="text" />
+        <input
+          type="text"
+          value={person.name}
+          onChange={(e) => onNameChange(e.target.value)}
+        />
       </div>
       <div>
-        <input type="text" />
+        <input
+          type="text"
+          value={person.address}
+          onChange={(e) => onAddressChange(e.target.value)}
+        />
       </div>
     </div>
   );
 }
 
-function MyOutput() {
+function MyOutput({ person }) {
   return (
     <div>
-      <p>이름 : </p>
-      <p>주소 : </p>
+      <p>이름 : {person.name}</p>
+      <p>주소 : {person.address}</p>
     </div>
   );
 }
 
 function MyComp2() {
+  const [person, setPerson] = useState({ name: "", address: "" });
+
+  function handleNameChange(name) {
+    setPerson({ ...person, name: name });
+  }
+  function handleAddressChange(address) {
+    setPerson({ ...person, address });
+  }
+
   return (
     <div>
-      <MyInput />
-      <MyOutput />
+      <MyInput
+        person={person}
+        onNameChange={handleNameChange}
+        onAddressChange={handleAddressChange}
+      />
+      <MyOutput person={person} />
     </div>
   );
 }
