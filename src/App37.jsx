@@ -126,6 +126,19 @@ function Child41() {
   // 1. 마운트 될 때 ("마운트됨")("count 업데이트됨") 출력
   // 2. 언마운트 될 때 ("언마운트됨") 출력
   // 3. count가 업데이트 될 때 ("count 업데이트됨") 출력
+  useEffect(() => {
+    console.log("마운트됨");
+
+    return () => {
+      console.log("언마운트됨");
+    };
+  }, []);
+
+  useEffect(() => {
+    if (count !== 0) {
+      console.log("count 업데이트됨");
+    }
+  }, [count]);
 
   return (
     <div>
