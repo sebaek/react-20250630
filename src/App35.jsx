@@ -128,9 +128,51 @@ function MyComp3() {
   );
 }
 
+function ChildComp43() {
+  return (
+    <div>
+      <h3>목록</h3>
+      <ul>{/*  이곳에 목록 출력하기 */}</ul>
+    </div>
+  );
+}
+function ChildComp42() {
+  return (
+    <div>
+      <ChildComp43 />
+    </div>
+  );
+}
+function ChildComp41() {
+  return (
+    <div>
+      <ChildComp42 />
+    </div>
+  );
+}
+function MyComp4() {
+  const [item, setItem] = useState("");
+  const [list, setList] = useState([]);
+  // 연습:  list를 context 사용해서 ChildComp43 에서 출력해보기
+  return (
+    <div>
+      <input
+        type="text"
+        value={item}
+        onChange={(e) => setItem(e.target.value)}
+      />
+      <button onClick={() => setList([...list, item])}>추가</button>
+      <ChildComp41 />
+    </div>
+  );
+}
+
 function App35(props) {
   return (
     <div>
+      {/* using context */}
+      <MyComp4 />
+      <hr />
       {/* using context */}
       <MyComp3 />
       <hr />
