@@ -123,7 +123,7 @@ function MyComp3() {
 function Child41() {
   const [count, setCount] = useState(0);
   // 연습
-  // 1. 마운트 될 때 ("마운트됨")("count 업데이트됨") 출력
+  // 1. 마운트 될 때 ("마운트됨") 출력
   // 2. 언마운트 될 때 ("언마운트됨") 출력
   // 3. count가 업데이트 될 때 ("count 업데이트됨") 출력
   useEffect(() => {
