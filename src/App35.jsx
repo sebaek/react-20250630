@@ -39,27 +39,31 @@ function MyComp1() {
   );
 }
 
-function ChildComp23() {
+function ChildComp23({ list }) {
   return (
     <div>
       <h3>목록</h3>
-      <ul>{/*  목록 출력 */}</ul>
+      <ul>
+        {list.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
     </div>
   );
 }
 
-function ChildComp22() {
+function ChildComp22({ list }) {
   return (
     <div>
-      <ChildComp23 />
+      <ChildComp23 list={list} />
     </div>
   );
 }
 
-function ChildComp21() {
+function ChildComp21({ list }) {
   return (
     <div>
-      <ChildComp22 />
+      <ChildComp22 list={list} />
     </div>
   );
 }
@@ -75,7 +79,7 @@ function MyComp2() {
     <div>
       <input value={text} onChange={(e) => setText(e.target.value)} />
       <button onClick={handleAddClick}>추가</button>
-      <ChildComp21 />
+      <ChildComp21 list={list} />
     </div>
   );
 }
