@@ -44,6 +44,24 @@ function Child21() {
   // 연습 :
   // 이 컴포넌트가 마운트 될 때 로그로 "자식21 마운트됨" 출력
   // 이 컴포넌트가 언마운트 될 때 로그로 "자식21 언마운트됨" 출력
+  useEffect(() => {
+    // mount 시
+    console.log("자식21 마운트 됨");
+    return () => {
+      //unmount 시
+      console.log("또다른 언마운트시 실행 코드");
+    };
+  }, []);
+
+  // useEffect 여러 개 사용 가능
+  useEffect(() => {
+    // mount 시
+    console.log("또다른 mount 때 실행되는 코드");
+    return () => {
+      // unmount 시
+      console.log("자식21 언마운트 됨");
+    };
+  }, []);
 
   return (
     <div>
