@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 function ChildComp13({ text }) {
   return (
@@ -84,9 +84,57 @@ function MyComp2() {
   );
 }
 
+function ChildComp33() {
+  // step2. use context
+  const message = useContext(MyComp3Context);
+
+  return <div>메세지 : {message}</div>;
+}
+
+function ChildComp32() {
+  return (
+    <div>
+      <ChildComp33 />
+    </div>
+  );
+}
+
+function ChildComp31() {
+  return (
+    <div>
+      <ChildComp32 />
+    </div>
+  );
+}
+
+// step1. create context
+const MyComp3Context = createContext(null);
+
+function MyComp3() {
+  const [message, setMessage] = useState("");
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+      />
+      {/*// step3. provide context*/}
+      <MyComp3Context value={message}>
+        <ChildComp31 />
+      </MyComp3Context>
+    </div>
+  );
+}
+
 function App35(props) {
   return (
     <div>
+      {/* using context */}
+      <MyComp3 />
+      <hr />
+      {/*prop drilling*/}
       <MyComp2 />
       <hr />
       {/*prop drilling*/}
