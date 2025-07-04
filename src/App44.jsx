@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 // /learn/spring : <h3>스프링 배우기</h3>
 // /learn/java/collection : <h3>자바 콜렉션 배우기</h3>
 
-// /learn : <h3>자바 배우기</h3>
+// /learn/java : <h3>자바 배우기</h3>
 
 function App44(props) {
   return (
