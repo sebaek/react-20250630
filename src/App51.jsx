@@ -1,21 +1,38 @@
 import React from "react";
-import { BrowserRouter, Outlet, Route, Routes } from "react-router";
+import {
+  BrowserRouter,
+  Outlet,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router";
 import { Button } from "react-bootstrap";
 
 // 연습
 // 각 버튼 클릭 시
 function MyLayout() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div>
         {/* / 로 이동*/}
-        <Button variant="outline-info">HOME</Button>
+        <Button onClick={() => navigate("/")} variant="outline-info">
+          HOME
+        </Button>
 
         {/* /qwe 로 이동*/}
-        <Button variant="outline-info">QWE</Button>
+        <Button onClick={() => navigate("/qwe")} variant="outline-info">
+          QWE
+        </Button>
 
         {/* /asd 로 이동*/}
-        <Button variant="outline-info">ASD</Button>
+        <Button onClick={() => navigate("/asd")} variant="outline-info">
+          ASD
+        </Button>
+
+        {/* history(방문기록) 기준으로 이동하기 */}
+        <Button onClick={() => navigate(-1)}>뒤로</Button>
       </div>
       <div>
         <Outlet />
