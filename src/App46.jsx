@@ -25,12 +25,21 @@ function Child1() {
   );
 }
 
+function Child2() {
+  const [params] = useSearchParams();
+
+  const userId = params.get("id");
+
+  return <h3>{userId} 회원 상세 보기</h3>;
+}
+
 function App46(props) {
   return (
     <div>
       <BrowserRouter>
         <Routes>
           <Route path="board/detail" element={<Child1 />} />
+          <Route path="member/detail" element={<Child2 />} />
         </Routes>
       </BrowserRouter>
     </div>
