@@ -1,5 +1,13 @@
 import React, { useEffect } from "react";
-import { BrowserRouter, Link, Outlet, Route, Routes } from "react-router";
+import {
+  BrowserRouter,
+  Link,
+  NavLink,
+  Outlet,
+  Route,
+  Routes,
+} from "react-router";
+import "./assets/mystyle.css";
 
 // 연습 : 아래 경로에 같은 sidebar가 존재하도록 코드 작성
 // 연습 : 경로 이동 시 모든 컴포넌트가 다시 마운트 되지 않도록 코드 수정
@@ -23,13 +31,13 @@ function ReactComponent() {
     <div className="d-flex gap-3">
       <div className="w-25 bg-body-tertiary p-1">
         <div>
-          <Link to="/react/install">인스톨</Link>
+          <NavLink to="/react/install">인스톨</NavLink>
         </div>
         <div>
-          <Link to="/react/game">게임</Link>
+          <NavLink to="/react/game">게임</NavLink>
         </div>
         <div>
-          <Link to="/react/state">상태</Link>
+          <NavLink to="/react/state">상태</NavLink>
         </div>
       </div>
       <div className="flex-grow-1 bg-primary-subtle">
