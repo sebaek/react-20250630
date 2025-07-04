@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 
 // 연습 : 아래 경로에 같은 sidebar가 존재하도록 코드 작성
+// 연습 : 경로 이동 시 모든 컴포넌트가 다시 마운트 되지 않도록 코드 수정
 
 // /react/install
 // /react/game
