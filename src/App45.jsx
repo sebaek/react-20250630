@@ -21,6 +21,12 @@ function Child1() {
 // /java/stream : <h3>stream 배우기</h3>
 // /java/class : <h3>class 배우기</h3>
 
+function Child2() {
+  // const params = useParams();
+  const { content } = useParams();
+  return <h3>{content} 배우기</h3>;
+}
+
 function App45(props) {
   return (
     <div>
@@ -28,6 +34,9 @@ function App45(props) {
         <Routes>
           <Route path="learn">
             <Route path=":mySubPath" element={<Child1 />} />
+          </Route>
+          <Route path="java">
+            <Route path=":content" element={<Child2 />} />
           </Route>
         </Routes>
       </BrowserRouter>
