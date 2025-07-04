@@ -41,6 +41,11 @@ function Child1() {
     </div>
   );
 }
+// 연습 :  검색기능, 페이지 이동 기능이 있는 Child2 만들기
+
+function Child2() {
+  return null;
+}
 
 function App47(props) {
   return (
@@ -48,6 +53,7 @@ function App47(props) {
       <BrowserRouter>
         <Routes>
           <Route path="/board/list" element={<Child1 />} />
+          <Route path="/member/list" element={<Child2 />} />
         </Routes>
       </BrowserRouter>
     </div>
