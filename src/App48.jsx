@@ -1,17 +1,41 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 
 // /react/learn
 // /react/tutorial
 // /react/docs
 // /react/api
 
+function ReactLayout() {
+  return (
+    <div>
+      <div className="d-flex justify-content-around">
+        <div>NAVBAR</div>
+        <div>
+          <a href="/react/learn">LEARN</a>
+        </div>
+        <div>
+          <a href="/react/tutorial">TUTORIAL</a>
+        </div>
+        <div>
+          <a href="/react/docs">DOCS</a>
+        </div>
+        <div>
+          <a href="/react/api">API</a>
+        </div>
+      </div>
+      {/*자식 경로의 컴포넌트가 출력되는 곳*/}
+      <Outlet></Outlet>
+    </div>
+  );
+}
+
 function App48(props) {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="react">
+          <Route path="react" element={<ReactLayout />}>
             <Route
               path="learn"
               element={
