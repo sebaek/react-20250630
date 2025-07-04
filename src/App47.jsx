@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Routes, useSearchParams } from "react-router";
+import { Button } from "react-bootstrap";
 
 function Child1() {
   const [keyword, setKeyword] = useState("");
@@ -44,7 +45,41 @@ function Child1() {
 // 연습 :  검색기능, 페이지 이동 기능이 있는 Child2 만들기
 
 function Child2() {
-  return null;
+  const [keyword, setKeyword] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const pages = [1, 2, 3, 4, 5];
+
+  function handleSearchClick() {
+    setSearchParams({ keyword: keyword });
+  }
+
+  function handlePageClick(num) {
+    const nextSearchParams = new URLSearchParams(searchParams);
+    nextSearchParams.set("page", num);
+    setSearchParams(nextSearchParams);
+  }
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={keyword}
+        onChange={(e) => setKeyword(e.target.value)}
+      />
+      <button onClick={handleSearchClick}>검색</button>
+      <hr />
+      {pages.map((num) => (
+        <Button
+          onClick={() => handlePageClick(num)}
+          variant="outline-primary"
+          key={num}
+        >
+          {num}
+        </Button>
+      ))}
+    </div>
+  );
 }
 
 function App47(props) {
