@@ -53,6 +53,7 @@ function MyComp4() {
 
 function App38(props) {
   // strict mode : 모든 컴포넌트를 마운트,언마운트,마운트
+  // pure component : 함수(컴포넌트) 밖의 데이터를 변경하지 말 것
   return (
     <div>
       <MyComp4 />
