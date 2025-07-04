@@ -1,7 +1,31 @@
 import React from "react";
-import { BrowserRouter, Link, Outlet, Route, Routes } from "react-router";
+import {
+  BrowserRouter,
+  Link,
+  Outlet,
+  Route,
+  Routes,
+  useNavigate,
+} from "react-router";
+import { Button } from "react-bootstrap";
 
 function MainLayout() {
+  // useNavigate() hook 을 사용 :
+  // Link, NavLink 사용 없이 코드로 경로를 이동하는 방법
+  const navigate = useNavigate();
+
+  function handleABCClick() {
+    navigate("/abc");
+  }
+
+  function handleXYZClick() {
+    navigate("/xyz");
+  }
+
+  function handleQWEClick() {
+    navigate("/qwe");
+  }
+
   return (
     <div>
       <div className="d-flex justify-content-around">
@@ -16,6 +40,26 @@ function MainLayout() {
           <Link to="/qwe">qwe</Link>
         </div>
       </div>
+
+      <div className="d-flex justify-content-around">
+        <div>NAVBAR</div>
+        <div>
+          <Button onClick={handleABCClick} variant="link">
+            abc
+          </Button>
+        </div>
+        <div>
+          <Button onClick={handleXYZClick} variant="link">
+            xyz
+          </Button>
+        </div>
+        <div>
+          <Button onClick={handleQWEClick} variant="link">
+            qwe
+          </Button>
+        </div>
+      </div>
+
       <div>
         <Outlet />
       </div>
