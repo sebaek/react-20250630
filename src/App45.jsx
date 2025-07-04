@@ -14,6 +14,13 @@ function Child1() {
   );
 }
 
+// 연습 : dynamic segments 사용해서 아래 경로에 해당 컴포넌트 출력하기
+
+// /java/collection : <h3>collection 배우기</h3>
+// /java/io : <h3>io 배우기</h3>
+// /java/stream : <h3>stream 배우기</h3>
+// /java/class : <h3>class 배우기</h3>
+
 function App45(props) {
   return (
     <div>
