@@ -9,8 +9,8 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 
 function ReactComponent() {
   return (
-    <div className="d-flex gap-3 p-5">
-      <div className="w-25 bg-body-tertiary">
+    <div className="d-flex gap-3">
+      <div className="w-25 bg-body-tertiary p-1">
         <div>
           <a href="/react/install">인스톨</a>
         </div>
@@ -21,7 +21,7 @@ function ReactComponent() {
           <a href="/react/state">상태</a>
         </div>
       </div>
-      <div className="flex-1 bg-primary-subtle">
+      <div className="flex-grow-1 bg-primary-subtle">
         <Outlet />
       </div>
     </div>
