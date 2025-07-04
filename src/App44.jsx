@@ -20,6 +20,7 @@ function App44(props) {
             <Route path="react" element={<h3>react 배우기 </h3>} />
             <Route path="spring" element={<h3>spring 배우기 </h3>} />
             <Route path="java">
+              <Route index element={<h3>자바 배우기</h3>} />
               <Route
                 path="collection"
                 element={<h3>java collection 배우기 </h3>}
