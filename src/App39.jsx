@@ -40,7 +40,7 @@ function MyComp2() {
         </thead>
         <tbody>
           {board.map((item) => (
-            <tr>
+            <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.title}</td>
               <td>{item.author}</td>
