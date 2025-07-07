@@ -78,8 +78,14 @@ function App54(props) {
     });
   }
 
+  function handleButton11Click() {
+    axios.post("/api/main29/sub11", ["java", "boot", "spring"]);
+  }
+
   return (
     <div>
+      <button onClick={handleButton11Click}>post 11 array</button>
+      <hr />
       <button onClick={handleButton10Click}>
         post 10 w/ data(object, array)
       </button>
