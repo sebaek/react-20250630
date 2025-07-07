@@ -35,9 +35,22 @@ function App55(props) {
     });
   }
 
-  //          delete /api/main30/sub4 받는 request handler method
+  function handleButton6Click() {
+    axios.delete("/api/main30/sub6", {
+      params: {
+        name: "son",
+        id: 77,
+      },
+    });
+  }
+
+  // 연습 : spring delete /api/main30/sub6 으로 오는 요청
+  // request parameter 받아서 출력하는 코드 완성
+
   return (
     <div>
+      <button onClick={handleButton6Click}>6 delete w/ data</button>
+      <hr />
       <button onClick={handleButton5Click}>5 put w/ data</button>
       <hr />
       <button onClick={handleButton4Click}>4 delete</button>
