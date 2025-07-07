@@ -68,8 +68,22 @@ function App54(props) {
     });
   }
 
+  function handleButton10Click() {
+    axios.post("/api/main29/sub10", {
+      cityList: ["paris", "ny", "seoul"],
+      team: {
+        name: "토트넘",
+        location: "런던",
+      },
+    });
+  }
+
   return (
     <div>
+      <button onClick={handleButton10Click}>
+        post 10 w/ data(object, array)
+      </button>
+      <hr />
       <button onClick={handleButton9Click}>post 9 w/ data (object)</button>
       <hr />
       <button onClick={handleButton8Click}>post 8 w/ data (array)</button>
