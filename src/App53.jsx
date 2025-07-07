@@ -111,8 +111,18 @@ function App53(props) {
     axios.get("/api/main28/sub15?" + p);
   }
 
+  function handleButton16Click() {
+    const p = new URLSearchParams();
+    p.set("fruit", "apple");
+    p.set("price", 5000);
+    p.set("location", "강남");
+    axios.get("/api/main28/sub16?" + p);
+  }
+
   return (
     <div>
+      <button onClick={handleButton16Click}>요청 16</button>
+      <hr />
       <button onClick={handleButton15Click}>요청 15</button>
       <hr />
       <button onClick={handleButton14Click}>요청 14</button>
