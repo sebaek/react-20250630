@@ -61,11 +61,7 @@ function App55(props) {
   return (
     <div>
       <div>
-        <input
-          type="file"
-          value={myFile}
-          onChange={(e) => setMyFile(e.target.value)}
-        />
+        <input type="file" onChange={(e) => setMyFile(e.target.files[0])} />
         <hr />
         <button onClick={handleButton7Click}>7 post w/ file</button>
       </div>
