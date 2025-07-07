@@ -54,8 +54,30 @@ function App53(props) {
     axios.get("/api/main28/sub8?name=son&age=33");
   }
 
+  function handleButton9Click() {
+    axios.get("/api/main28/sub9?address=seoul&score=88.12");
+  }
+
+  function handleButton10Click() {
+    // query string 직접 완성
+    axios.get("/api/main28/sub10?address=서울 강남&score=88.12");
+  }
+
+  function handleButton11Click() {
+    // config의 params에 객체를 넣는 방법
+    axios.get("/api/main28/sub11", {
+      params: { address: "서울 신촌", score: "77.77" },
+    });
+  }
+
   return (
     <div>
+      <button onClick={handleButton11Click}>요청 11 + query string</button>
+      <hr />
+      <button onClick={handleButton10Click}>요청 10 + query string</button>
+      <hr />
+      <button onClick={handleButton9Click}>요청 9 + query string</button>
+      <hr />
       <button onClick={handleButton8Click}>요청 8 w/ query string</button>
       <hr />
       {/*연습 : axios.get 메소드 활용해서 7버튼 클릭시 get /api/main28/sub7 요청 보내기*/}
