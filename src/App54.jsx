@@ -10,8 +10,14 @@ function App54(props) {
     axios.post("/api/main29/sub2"); // 더 자주
   }
 
+  function handleButton3Click() {
+    axios.post("/api/main29/sub3");
+  }
+
   return (
     <div>
+      <button onClick={handleButton3Click}>post 3</button>
+      <hr />
       <button onClick={handleButton2Click}>post 2</button>
       <hr />
       <button onClick={handleButton1Click}>post 1</button>
