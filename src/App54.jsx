@@ -21,10 +21,29 @@ function App54(props) {
 
   function handleButton5Click() {
     // 연습 : 적절한 코드 작성
+    axios.post("/api/main29/sub5", {
+      address: "seoul",
+      score: 88.12,
+      country: "korea",
+    });
+  }
+
+  function handleButton6Click() {
+    axios.post("/api/main29/sub6", {
+      val1: "신촌", // string
+      val2: 66, // number
+      val3: 77.12, // number
+      val4: true, // boolean
+      val5: null, // null
+    });
   }
 
   return (
     <div>
+      <button onClick={handleButton6Click}>
+        post 6 w/ data (boolean, string, number, null)
+      </button>
+      <hr />
       <button onClick={handleButton5Click}>post 5 w/ data</button>
       <hr />
       <button onClick={handleButton4Click}>post 4 w/ data</button>
