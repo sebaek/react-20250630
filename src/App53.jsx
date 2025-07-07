@@ -90,8 +90,33 @@ function App53(props) {
     });
   }
 
+  function handleButton14Click() {
+    const p = new URLSearchParams();
+    p.set("city", "london");
+    p.set("country", "korea");
+    p.set("id", 99);
+    axios.get("/api/main28/sub14", {
+      params: p,
+    });
+  }
+
+  function handleButton15Click() {
+    const p = new URLSearchParams();
+    p.set("name", "hm");
+    p.set("age", "33");
+    p.set("country", "한국");
+    console.log(p.toString());
+
+    // axios.get("/api/main28/sub15?" + p.toString());
+    axios.get("/api/main28/sub15?" + p);
+  }
+
   return (
     <div>
+      <button onClick={handleButton15Click}>요청 15</button>
+      <hr />
+      <button onClick={handleButton14Click}>요청 14</button>
+      <hr />
       <button onClick={handleButton13Click}>
         요청13 URLSearchParams 객체 활용{" "}
       </button>
