@@ -47,8 +47,33 @@ function App54(props) {
     });
   }
 
+  function handleButton8Click() {
+    axios.post("/api/main29/sub8", {
+      address: "강남",
+      age: 77,
+      fruits: ["apple", "lemon", "mango"], // array
+    });
+  }
+
+  function handleButton9Click() {
+    axios.post("/api/main29/sub9", {
+      name: "son",
+      teams: ["서울", "런던", "제주"],
+      // object
+      person: {
+        name: "흥민",
+        address: "서울",
+        age: 55,
+      },
+    });
+  }
+
   return (
     <div>
+      <button onClick={handleButton9Click}>post 9 w/ data (object)</button>
+      <hr />
+      <button onClick={handleButton8Click}>post 8 w/ data (array)</button>
+      <hr />
       {/*연습 : 7번째 handleButton7Click 함수 만들기*/}
       <button onClick={handleButton7Click}>
         post 7 w/ data (boolean, String, number)
