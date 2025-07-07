@@ -25,6 +25,11 @@ function App53(props) {
 
   return (
     <div>
+      {/* 연습 : 버튼 4 클릭하면 get /api/main28/sub3 으로 요청 보내기*/}
+      {/* 서버에서  get /api/main28/sub3 의 요청 받는 method 만들기*/}
+
+      {/* 연습 : 버튼 5 클릭하면 post /api/main28/sub4 으로 요청*/}
+      {/* 서버에서 post /api/main28/sub4 의 요청 받는 method 만들기*/}
       <button onClick={handleButton3Click}>요청 보내기 3</button>
       <hr />
       <button onClick={handleButton2Click}>요청 보내기 2</button>
