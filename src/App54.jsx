@@ -82,8 +82,31 @@ function App54(props) {
     axios.post("/api/main29/sub11", ["java", "boot", "spring"]);
   }
 
+  function handleButton12Click() {
+    axios.post("/api/main29/sub12", [
+      {
+        name: "손",
+        age: 55,
+        address: "서울",
+      },
+      {
+        name: "박",
+        age: 66,
+        address: "수원",
+      },
+      {
+        name: "차",
+        age: 77,
+        address: "인천",
+      },
+    ]);
+  }
+  // 연습 : post /api/main29/sub12 요청 받는 spring의 request handler method 만들기
+
   return (
     <div>
+      <button onClick={handleButton12Click}>post 12 w/ array of objects</button>
+      <hr />
       <button onClick={handleButton11Click}>post 11 array</button>
       <hr />
       <button onClick={handleButton10Click}>
