@@ -6,6 +6,9 @@ function App53(props) {
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
   const [city, setCity] = useState("");
+  const [fruit, setFruit] = useState("");
+  const [price, setPrice] = useState(0);
+  const [location, setLocation] = useState("");
 
   function handleButton1Click() {
     axios.request({
@@ -157,8 +160,69 @@ function App53(props) {
     axios.get(`/api/main28/sub17?name=${name}&age=${age}&city=${city}`);
   }
 
+  function handleButton21Click() {
+    axios.get(
+      `/api/main28/sub21?fruit=${fruit}&price=${price}&location=${location}`,
+    );
+  }
+  function handleButton22Click() {
+    const params = new URLSearchParams();
+    params.set("fruit", fruit);
+    params.set("price", price);
+    params.set("location", location);
+    // axios.get(`/api/main28/sub22?${params}`);
+    axios.get(`/api/main28/sub22?` + params);
+  }
+  function handleButton23Click() {
+    const params = new URLSearchParams();
+    params.set("fruit", fruit);
+    params.set("price", price);
+    params.set("location", location);
+    axios.get("/api/main28/sub23", { params: params });
+  }
+  function handleButton24Click() {
+    axios.get("/api/main28/sub24", {
+      params: {
+        fruit: fruit,
+        price: price,
+        location: location,
+      },
+    });
+  }
+
   return (
     <div>
+      <div>
+        <div>
+          <input
+            type="text"
+            value={fruit}
+            onChange={(e) => setFruit(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+        </div>
+      </div>
+      <button onClick={handleButton24Click}>요청 24</button>
+      <hr />
+      <button onClick={handleButton23Click}>요청 23</button>
+      <hr />
+      <button onClick={handleButton22Click}>요청 22</button>
+      <hr />
+      <button onClick={handleButton21Click}>요청 21</button>
+      <hr />
       <hr />
       <div>
         <div>
