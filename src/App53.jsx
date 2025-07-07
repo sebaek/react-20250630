@@ -70,8 +70,34 @@ function App53(props) {
     });
   }
 
+  function handleButton12Click() {
+    axios.get("/api/main28/sub12", {
+      params: {
+        fruit: "apple",
+        price: 5000,
+      },
+    });
+  }
+
+  function handleButton13Click() {
+    const searchParams = new URLSearchParams();
+    searchParams.set("name", "흥민");
+    searchParams.set("age", "33");
+    searchParams.set("address", "서울 강남");
+
+    axios.get("/api/main28/sub13", {
+      params: searchParams,
+    });
+  }
+
   return (
     <div>
+      <button onClick={handleButton13Click}>
+        요청13 URLSearchParams 객체 활용{" "}
+      </button>
+      <hr />
+      <button onClick={handleButton12Click}>요청 12</button>
+      <hr />
       <button onClick={handleButton11Click}>요청 11 + query string</button>
       <hr />
       <button onClick={handleButton10Click}>요청 10 + query string</button>
