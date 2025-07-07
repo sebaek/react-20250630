@@ -38,10 +38,21 @@ function App54(props) {
     });
   }
 
+  function handleButton7Click() {
+    axios.post("/api/main29/sub7", {
+      address: "서울",
+      score: 88.12,
+      age: 98,
+      married: false,
+    });
+  }
+
   return (
     <div>
       {/*연습 : 7번째 handleButton7Click 함수 만들기*/}
-      <button>post 7 w/ data (boolean, String, number)</button>
+      <button onClick={handleButton7Click}>
+        post 7 w/ data (boolean, String, number)
+      </button>
       <hr />
       <button onClick={handleButton6Click}>
         post 6 w/ data (boolean, string, number, null)
