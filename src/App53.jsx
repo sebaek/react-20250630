@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 function App53(props) {
+  // use...(hook)들은 컴포넌트 최상단에 작성(조건문,반복문 사용금지)
+  const [name, setName] = useState("");
+  const [age, setAge] = useState(0);
+  const [city, setCity] = useState("");
+
   function handleButton1Click() {
     axios.request({
       method: "get",
@@ -120,8 +125,73 @@ function App53(props) {
     axios.get(`/api/main28/sub16?${p}`);
   }
 
+  function handleButton20Click() {
+    // 객체를 config.params에 넣기
+    axios.get("/api/main28/sub20", {
+      params: {
+        name: name,
+        age: age,
+        city: city,
+      },
+    });
+  }
+  function handleButton19Click() {
+    // URLSearchParams를 config.params에 넣기
+    const p = new URLSearchParams();
+    p.set("name", name);
+    p.set("age", age);
+    p.set("city", city);
+    axios.get("/api/main28/sub19", { params: p });
+  }
+  function handleButton18Click() {
+    // URLSearchParams를 연결연산자로 붙이기
+    const p = new URLSearchParams();
+    p.set("name", name);
+    p.set("age", age);
+    p.set("city", city);
+    axios.get(`/api/main28/sub18?${p}`);
+    // axios.get(`/api/main28/sub18`+p);
+  }
+  function handleButton17Click() {
+    // query string 직접 완성
+    axios.get(`/api/main28/sub17?name=${name}&age=${age}&city=${city}`);
+  }
+
   return (
     <div>
+      <hr />
+      <div>
+        <div>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+        </div>
+      </div>
+      <button onClick={handleButton20Click}>요청 20</button>
+      <hr />
+      <button onClick={handleButton19Click}>요청 19</button>
+      <hr />
+      <button onClick={handleButton18Click}>요청 18</button>
+      <hr />
+      <button onClick={handleButton17Click}>요청 17</button>
+      <hr />
+
       <button onClick={handleButton16Click}>요청 16</button>
       <hr />
       <button onClick={handleButton15Click}>요청 15</button>
