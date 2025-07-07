@@ -22,9 +22,24 @@ function App55(props) {
     axios.put("/api/main30/sub3");
   }
 
+  function handleButton5Click() {
+    axios.put("/api/main30/sub5", {
+      nickName: "트럼프",
+      age: 77,
+      married: true,
+      team: {
+        location: "ny",
+        country: "korea",
+      },
+      address: ["seoul", "busan", "jeju"],
+    });
+  }
+
   //          delete /api/main30/sub4 받는 request handler method
   return (
     <div>
+      <button onClick={handleButton5Click}>5 put w/ data</button>
+      <hr />
       <button onClick={handleButton4Click}>4 delete</button>
       <hr />
       <button onClick={handleButton3Click}>3 put</button>
