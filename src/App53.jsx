@@ -116,7 +116,8 @@ function App53(props) {
     p.set("fruit", "apple");
     p.set("price", 5000);
     p.set("location", "강남");
-    axios.get("/api/main28/sub16?" + p);
+    // axios.get("/api/main28/sub16?" + p);
+    axios.get(`/api/main28/sub16?${p}`);
   }
 
   return (
