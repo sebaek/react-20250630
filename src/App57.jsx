@@ -89,6 +89,28 @@ function App57(props) {
     <div>
       <button
         onClick={() => {
+          axios.get("/api/main32/sub12");
+        }}
+      >
+        200
+      </button>
+      <button
+        onClick={() => {
+          axios.get("/api/main32/sub13");
+        }}
+      >
+        400
+      </button>
+      <button
+        onClick={() => {
+          axios.get("/api/main32/sub14");
+        }}
+      >
+        404
+      </button>
+      <hr />
+      <button
+        onClick={() => {
           axios.get("/api/main32/sub9");
         }}
       >
