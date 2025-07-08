@@ -9,8 +9,16 @@ function App57(props) {
     });
   }
 
+  function handleButton2Click() {
+    axios.get("/api/main32/sub2").then((res) => {
+      console.log(res.data);
+    });
+  }
+
   return (
     <div>
+      <button onClick={handleButton2Click}>데이터 받기 2</button>
+      <hr />
       <button onClick={handleButton1Click}>데이터 받기 1</button>
     </div>
   );
