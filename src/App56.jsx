@@ -50,6 +50,28 @@ function App56(props) {
     <div>
       <button
         onClick={() => {
+          axios.get("/api/main31/sub7/33");
+        }}
+      >
+        id 33
+      </button>
+      <button
+        onClick={() => {
+          axios.get("/api/main31/sub7/66");
+        }}
+      >
+        id 66
+      </button>
+      <button
+        onClick={() => {
+          axios.get("/api/main31/sub7/99");
+        }}
+      >
+        id 99
+      </button>
+      <hr />
+      <button
+        onClick={() => {
           axios.get("/api/main31/sub6/seoul");
         }}
       >
