@@ -13,8 +13,24 @@ function App56(props) {
     });
   }
 
+  function handleButton2Click() {
+    axios.postForm("/api/main31/sub2", {
+      address: "신촌",
+      score: 55.66,
+      yourFiles: myFiles,
+    });
+  }
+
   return (
     <div>
+      <div>
+        <input
+          type="file"
+          multiple={true}
+          onChange={(e) => setMyFiles(e.target.files)}
+        />
+        <button onClick={handleButton2Click}>파일 전송 2 여러개</button>
+      </div>
       <div>
         {/* file은 e.target.files */}
         <input type="file" onChange={(e) => setMyFiles(e.target.files)} />
