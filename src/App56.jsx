@@ -48,6 +48,30 @@ function App56(props) {
 
   return (
     <div>
+      <button
+        onClick={() => {
+          axios.get("/api/main31/sub6/seoul");
+        }}
+      >
+        서울 전송
+      </button>
+      <button
+        onClick={() => {
+          axios.get("/api/main31/sub6/jeju");
+        }}
+      >
+        제주 전송
+      </button>
+      <button
+        onClick={() => {
+          axios.get("/api/main31/sub6/busan");
+        }}
+      >
+        부산 전송
+      </button>
+
+      <hr />
+
       <div>
         <input
           type="file"
