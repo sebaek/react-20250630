@@ -28,8 +28,58 @@ function App57(props) {
     });
   }
 
+  function handleButton4Click() {
+    axios.get("/api/main32/sub4").then((res) => {
+      const data = res.data;
+
+      console.log(data.city, data.address, data.country);
+    });
+  }
+
+  function handleButton5Click() {
+    axios.get("/api/main32/sub5").then((res) => {
+      const data = res.data;
+      console.log(data.id, data.city, data.phone.phone1, data.phone.phone2);
+    });
+  }
+
+  function handleButton6Click() {
+    axios.get("/api/main32/sub6").then((res) => {
+      const data = res.data;
+      console.log(
+        data.id,
+        data.name,
+        data.address[0],
+        data.address[1],
+        data.address[2],
+      );
+    });
+  }
+
+  function handleButton7Click() {
+    axios.get("/api/main32/sub7").then((res) => {
+      const data = res.data;
+      console.log(
+        data.id,
+        data.name,
+        data.fruits[0],
+        data.fruits[1],
+        data.address.city,
+        data.address.country,
+      );
+    });
+  }
+
   return (
     <div>
+      <button onClick={handleButton7Click}>button 7</button>
+      <hr />
+      <button onClick={handleButton6Click}>버튼 6</button>
+      <hr />
+      <button onClick={handleButton5Click}>버튼 5</button>
+      <hr />
+      <button onClick={handleButton4Click}>버튼 4</button>
+      <hr />
       <button onClick={handleButton3Click}>직렬화된 json 데이터 받기 </button>
       <hr />
       <button onClick={handleButton2Click}>데이터 받기 2</button>
