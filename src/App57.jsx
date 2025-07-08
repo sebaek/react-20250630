@@ -70,8 +70,47 @@ function App57(props) {
     });
   }
 
+  function handleButton8Click() {
+    axios.get("/api/main32/sub8").then((res) => {
+      const data = res.data;
+      console.log(
+        data.id,
+        data.price,
+        data.title,
+        data.category.author,
+        data.category.genre,
+        data.orders[0],
+        data.orders[1],
+      );
+    });
+  }
+
   return (
     <div>
+      <button
+        onClick={() => {
+          axios.get("/api/main32/sub9");
+        }}
+      >
+        200 code
+      </button>
+      <button
+        onClick={() => {
+          axios.get("/api/main32/sub10");
+        }}
+      >
+        404 code
+      </button>
+      <button
+        onClick={() => {
+          axios.get("/api/main32/sub11");
+        }}
+      >
+        500 code
+      </button>
+      <hr />
+      <button onClick={handleButton8Click}>button 8</button>
+      <hr />
       <button onClick={handleButton7Click}>button 7</button>
       <hr />
       <button onClick={handleButton6Click}>버튼 6</button>
