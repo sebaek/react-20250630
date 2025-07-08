@@ -112,12 +112,30 @@ function App57(props) {
   // 연습 : 17번 버튼 클릭시 get /api/main32/sub17로 요청
   //  200번 응답 받기(spring boot 코드 작성)
   //  응답 후  console에 17잘됨 출력
-  function handleButton17Click() {}
+  function handleButton17Click() {
+    axios
+      .get("/api/main32/sub17")
+      .then((res) => {
+        console.log("17번 잘됨");
+      })
+      .catch((err) => {
+        console.log("17번 잘 안됨");
+      });
+  }
 
   // 연습 : 18번 버튼 클릭시 get /api/main32/sub18로 요청
   //  500번 응답 받기(spring boot 코드 작성)
   // 응답 후 console에 18 잘 안됨 출력
-  function handleButton18Click() {}
+  function handleButton18Click() {
+    axios
+      .get("/api/main32/sub18")
+      .then((res) => {
+        console.log("18번 잘됨");
+      })
+      .catch((err) => {
+        console.log("18번 잘 안됨");
+      });
+  }
 
   return (
     <div>
