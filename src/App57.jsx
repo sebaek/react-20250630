@@ -15,8 +15,23 @@ function App57(props) {
     });
   }
 
+  function handleButton3Click() {
+    axios.get("/api/main32/sub3").then((res) => {
+      console.log(res.data); // json이 parsing된 js object
+      console.log(res.data.name);
+      console.log(res.data.age);
+
+      console.log();
+      const data = res.data;
+      console.log(data.name);
+      console.log(data.age);
+    });
+  }
+
   return (
     <div>
+      <button onClick={handleButton3Click}>직렬화된 json 데이터 받기 </button>
+      <hr />
       <button onClick={handleButton2Click}>데이터 받기 2</button>
       <hr />
       <button onClick={handleButton1Click}>데이터 받기 1</button>
