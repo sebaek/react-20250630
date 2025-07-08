@@ -21,8 +21,23 @@ function App56(props) {
     });
   }
 
+  function handleButton3Click() {
+    axios.postForm("/api/main31/sub3", {
+      city: "서울",
+      uploadFiles: myFiles,
+    });
+  }
+
   return (
     <div>
+      <div>
+        <input
+          type="file"
+          multiple
+          onChange={(e) => setMyFiles(e.target.files)}
+        />
+        <button onClick={handleButton3Click}>파일 전송 3 여러개</button>
+      </div>
       <div>
         <input
           type="file"
