@@ -149,8 +149,45 @@ function App57(props) {
     });
   }
 
+  function handleButton21Click() {
+    axios
+      .get("/api/main32/sub21")
+      .then((res) => {
+        console.log("잘됨");
+        console.log(res.data[0]);
+        console.log(res.data[1]);
+        console.log(res.data[2]);
+      })
+      .catch((err) => {
+        console.log("잘안됨");
+        console.log(err.response.data[0]);
+        console.log(err.response.data[1]);
+        console.log(err.response.data[2]);
+      });
+  }
+
+  function handleButton22Click() {
+    axios
+      .get("/api/main32/sub22")
+      .then((res) => {
+        console.log("잘됨");
+        console.log(res.data[0]);
+        console.log(res.data[1]);
+        console.log(res.data[2]);
+      })
+      .catch((err) => {
+        console.log("잘안됨");
+        console.log(err.response.data[0]);
+        console.log(err.response.data[1]);
+        console.log(err.response.data[2]);
+      });
+  }
+
   return (
     <div>
+      <button onClick={handleButton21Click}>21 / 200 대</button>
+      <button onClick={handleButton22Click}>22 / 500 대</button>
+      <hr />
       <button onClick={handleButton19Click}>19 / 200번 w/ data</button>
       <button onClick={handleButton20Click}>20 / 400번 w/ data</button>
       <hr />
