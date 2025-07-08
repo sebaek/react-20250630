@@ -137,8 +137,23 @@ function App57(props) {
       });
   }
 
+  function handleButton19Click() {
+    axios.get("/api/main32/sub19").then((res) => {
+      console.log(res.data);
+    });
+  }
+
+  function handleButton20Click() {
+    axios.get("/api/main32/sub20").catch((err) => {
+      console.log(err.response.data);
+    });
+  }
+
   return (
     <div>
+      <button onClick={handleButton19Click}>19 / 200번 w/ data</button>
+      <button onClick={handleButton20Click}>20 / 400번 w/ data</button>
+      <hr />
       <button onClick={handleButton17Click}>17 / 200번 대 응답</button>
       <button onClick={handleButton18Click}>18 / 500번 대 응답</button>
       <hr />
